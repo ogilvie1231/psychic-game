@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Guess Game</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <h1>Are you psychic? Play to find out!</h1>
+    <div class="container">
+        <div id="desc">
+            <h3>Guess what letter I am thinking of</h3>
+            <br>
+        </div>
+        <div id="counter">
+            <p id="winsText">Wins:</p>
+            <p id="lossText">Loses:</p>
+            <p id="guessesLeft">Guesses Left:</p>
+            <p id="lettersGuessed">Letters Guessed:</p>
+            <p id="userGuess"></p>
+        </div>
+    </div>
+    <script>
+        var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        var wins = 0;
+        var losses = 0;
+        var winsText = document.getElementById("winsText");
+        var lossText = document.getElementById("lossText");
+        var lettersGuessed = document.getElementById("lettersGuessed");
+
+
+        // Generating a random starting number that doesn't change onkeyup
+
+        // document.onload = function () {
+
+        //     var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+        //     console.log(computerGuess)};
+
+        document.onkeyup = function () {
+            var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+            var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+            console.log(computerGuess);
+
+            console.log(userGuess);
+            
+            if (computerGuess == userGuess) {
+                wins++;
+                console.log(wins)
+                
+                // document.getElementById("wins" + wins)
+                alert("You are psychic!")
+                // document.getElementById("#wins" + wins).append
+            }
+            winsText.textContent = "wins: " + wins;
+            lossText.textContent = "losses: " + losses;
+            userGuess.textContent = "Letters Guessed: " + userGuess;
+
+
+        };
+
+
+
+    </script>
+</body>
+
+</html>
