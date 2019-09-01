@@ -1,45 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Psychic Guess Game</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <!-- javascript not functioning when linked. The source is good. -->
-    <!-- <script src="./assets/game.js"></script> -->
-</head>
-
-<body>
-    <h1>Are you psychic? Play to find out!</h1>
-    <div class="container">
-        <div id="desc">
-            <h3>Guess what letter I am thinking of</h3>
-            <br>
-        </div>
-        <!-- Creating text for user input to live -->
-        <div id="counter">
-            <p id="winsText">Wins:</p>
-            <p id="lossText">Loses:</p>
-            <p id="guessesLeftText">Guesses Left:</p>
-            <p id="lettersGuessedText">Letters Guessed:</p>
-            <p id="userGuess"></p>
-        </div>
-    </div>
-<!--  -->
-    <script>
-        
         var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-        // To start wins and losses at 0
         var wins = 0;
         var losses = 0;
-        // to start quantity of guesses to 10
         var guessesLeft = 10;
-        // empty array to hold user guesses
         var lettersGuessedText = []
-        // calling on the HTML ID's
         var winsText = document.getElementById("winsText");
         var lossText = document.getElementById("lossText");
         var lettersGuessed = document.getElementById("lettersGuessedText");
@@ -48,9 +13,9 @@
 
 
 
-        // giving the computer a random choice from the options array
+
         var computerGuess = options[Math.floor(Math.random() * options.length)];
-        
+        var guessesLeft = 11;
         // creating a reset
         var restart = function () {
             guessesLeft = 10;
@@ -122,9 +87,3 @@
 
 };
 
-
-    </script>
-    
-</body>
-
-</html>

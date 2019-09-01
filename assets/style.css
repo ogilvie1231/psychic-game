@@ -17,17 +17,21 @@ body {
     color: black;
     font-size: 22px;
     border: 2px solid black;
+    border-radius: 10px;
 }
 
 #counter {
     margin: 5% 0% 0% 15%;
-    max-width: 25%;
-    background-color: #B36C4F;
+    max-width: 35%;
+    background-color: rgb(255, 96, 96);
     padding: 1%;
     border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .container {
+    border-radius: 10px;
     margin: 0 8% 0 8%;
     background-color: #256C99;
     border: 1px solid black;
