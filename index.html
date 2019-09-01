@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Psychic Guess Game</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- javascript not functioning when linked. The source is good. -->
     <!-- <script src="./assets/game.js"></script> -->
 </head>
@@ -59,10 +60,12 @@
         }
 
 
-
+// creating onkey up function
         document.onkeyup = function () {
+            // setting user guess to keyboard input and setting them all to lower case
             var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
+            // setting a letter checker to make only the keys in the options array playable
             var letCheck = false
 
             for(var i = 0; i < options.length; i++){
@@ -71,6 +74,7 @@
                 }
             }
 
+            // only running these if letCheck is true
             if (letCheck){
 
             for (var i = 0; i < lettersGuessedText.length; i++){
@@ -79,17 +83,19 @@
                     return
                 }
             }
+            // pushing letters guessed into our blank letters guessed array
             lettersGuessedText.push(userGuess)
 
             console.log(computerGuess);
 
             console.log(userGuess);
             
+            // reducing guesses left by 1 for each guess made
             guessesLeft = (guessesLeft - 1)
             console.log(guessesLeft)
 
 
-
+            // creating an 'if' for a user win and adding to 'wins'
             if (computerGuess === userGuess) {
 
                 wins++;
@@ -102,6 +108,7 @@
 
             }
 
+            // creating the scenario of a losing situation and adding to 'losses'
             else if (guessesLeft === 0){
                 losses++
                 restart();
@@ -111,7 +118,7 @@
 
 
 
-
+            // displaying new numbers in the html
             winsText.textContent = "wins: " + wins;
             lossText.textContent = "losses: " + losses;
             guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
