@@ -13,24 +13,29 @@
 </head>
 
 <body>
-    <h1>Are you psychic? Play to find out!</h1>
-    <div class="container">
-        <div id="desc">
-            <h3>Guess what letter I am thinking of</h3>
+    <div class="mainContainer">
+        <h1>Are you psychic? Play to find out!</h1>
+        <div class="container">
+            <div id="desc">
+                <h3>Use your keyboard to guess what letter I am thinking of. You have 10 tries. If you guess correctly,
+                    you
+                    win. If you don't choose the correct letter within 10 guesses you will lose and the game will reset.
+                </h3>
+            </div>
             <br>
+            <!-- Creating text for user input to live -->
+            <div id="counter">
+                <p id="winsText">Wins:</p>
+                <p id="lossText">Loses:</p>
+                <p id="guessesLeftText">Guesses Left:</p>
+                <p id="lettersGuessedText">Letters Guessed:</p>
+                <p id="userGuess"></p>
+            </div>
         </div>
-        <!-- Creating text for user input to live -->
-        <div id="counter">
-            <p id="winsText">Wins:</p>
-            <p id="lossText">Loses:</p>
-            <p id="guessesLeftText">Guesses Left:</p>
-            <p id="lettersGuessedText">Letters Guessed:</p>
-            <p id="userGuess"></p>
-        </div>
+        <!--  -->
     </div>
-<!--  -->
     <script>
-        
+
         var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
         // To start wins and losses at 0
@@ -45,13 +50,13 @@
         var lossText = document.getElementById("lossText");
         var lettersGuessed = document.getElementById("lettersGuessedText");
         var guessesLeftText = document.getElementById("guessesLeftText");
-        
+
 
 
 
         // giving the computer a random choice from the options array
         var computerGuess = options[Math.floor(Math.random() * options.length)];
-        
+
         // creating a reset
         var restart = function () {
             guessesLeft = 10;
@@ -60,7 +65,7 @@
         }
 
 
-// creating onkey up function
+        // creating onkey up function
         document.onkeyup = function () {
             // setting user guess to keyboard input and setting them all to lower case
             var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
@@ -68,70 +73,70 @@
             // setting a letter checker to make only the keys in the options array playable
             var letCheck = false
 
-            for(var i = 0; i < options.length; i++){
-                if (userGuess === options[i]){
+            for (var i = 0; i < options.length; i++) {
+                if (userGuess === options[i]) {
                     letCheck = true
                 }
             }
 
             // only running these if letCheck is true
-            if (letCheck){
+            if (letCheck) {
 
-            for (var i = 0; i < lettersGuessedText.length; i++){
-                if (userGuess === lettersGuessedText[i]){
-                    alert("letter already guessed")
-                    return
+                for (var i = 0; i < lettersGuessedText.length; i++) {
+                    if (userGuess === lettersGuessedText[i]) {
+                        alert("letter already guessed")
+                        return
+                    }
                 }
-            }
-            // pushing letters guessed into our blank letters guessed array
-            lettersGuessedText.push(userGuess)
+                // pushing letters guessed into our blank letters guessed array
+                lettersGuessedText.push(userGuess)
 
-            console.log(computerGuess);
+                console.log(computerGuess);
 
-            console.log(userGuess);
-            
-            // reducing guesses left by 1 for each guess made
-            guessesLeft = (guessesLeft - 1)
-            console.log(guessesLeft)
+                console.log(userGuess);
 
-
-            // creating an 'if' for a user win and adding to 'wins'
-            if (computerGuess === userGuess) {
-
-                wins++;
-
-                restart();
-
-                console.log(wins);
-
-                alert("You are psychic!");
-
-            }
-
-            // creating the scenario of a losing situation and adding to 'losses'
-            else if (guessesLeft === 0){
-                losses++
-                restart();
-
-            console.log(losses)
-        }
+                // reducing guesses left by 1 for each guess made
+                guessesLeft = (guessesLeft - 1)
+                console.log(guessesLeft)
 
 
+                // creating an 'if' for a user win and adding to 'wins'
+                if (computerGuess === userGuess) {
 
-            // displaying new numbers in the html
-            winsText.textContent = "wins: " + wins;
-            lossText.textContent = "losses: " + losses;
-            guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
-            lettersGuessed.textContent = "Letters Guessed: " + lettersGuessedText.join(', ');
+                    wins++;
 
+                    restart();
+
+                    console.log(wins);
+
+                    alert("You are psychic!");
+
+                }
+
+                // creating the scenario of a losing situation and adding to 'losses'
+                else if (guessesLeft === 0) {
+                    losses++
+                    restart();
+
+                    console.log(losses)
+                }
+
+
+
+                // displaying new numbers in the html
+                winsText.textContent = "wins: " + wins;
+                lossText.textContent = "losses: " + losses;
+                guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
+                lettersGuessed.textContent = "Letters Guessed: " + lettersGuessedText.join(', ');
+
+
+            };
 
         };
 
-};
-
 
     </script>
-    
+
 </body>
 
 </html>
