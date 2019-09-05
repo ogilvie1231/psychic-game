@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- javascript not functioning when linked. The source is good. -->
-    <!-- <script src="./assets/game.js"></script> -->
+    
 </head>
 
 <body>
@@ -34,7 +34,7 @@
         </div>
         <!--  -->
     </div>
-    <script>
+    <!-- <script>
 
         var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -63,7 +63,9 @@
             computerGuess = options[Math.floor(Math.random() * options.length)];
             lettersGuessedText = []
         }
-
+        winsText.textContent = "wins: " + wins;
+        lossText.textContent = "losses: " + losses;
+        guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
 
         // creating onkey up function
         document.onkeyup = function () {
@@ -135,8 +137,8 @@
         };
 
 
-    </script>
-
+    </script> -->
+    <script src="./assets/game.js"></script>
 </body>
 
 </html>
