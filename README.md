@@ -5,5 +5,5 @@
 <img src="assets/images/2.png" alt="site image" >&nbsp;
 
 <ul>
-    <li>Built using HTML, CSS an JavaScript</li>
+    <li>Built using HTML, CSS and JavaScript</li>
 </ul>
