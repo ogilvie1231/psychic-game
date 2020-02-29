@@ -50,7 +50,6 @@
                 for (var i = 0; i < lettersGuessedText.length; i++) {
                     if (userGuess === lettersGuessedText[i]) {
                         alert("letter already guessed")
-                        return
                     }
                 }
                 // pushing letters guessed into our blank letters guessed array

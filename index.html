@@ -8,33 +8,36 @@
     <title>Psychic Guess Game</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Simonetta&display=swap" rel="stylesheet">
     <!-- javascript not functioning when linked. The source is good. -->
     
 </head>
 
 <body>
     <div class="mainContainer">
-        <h1>Are you psychic? Play to find out!</h1>
+        <h1 >Are you psychic? Play to find out!</h1>
         <div class="container">
             <div id="desc">
-                <h3>Use your keyboard to guess what letter I am thinking of. You have 10 tries. If you guess correctly,
+                <h3 class="text">Use your keyboard to guess what letter I am thinking of. You have 10 tries. If you guess correctly,
                     you
                     win. If you don't choose the correct letter within 10 guesses you will lose and the game will reset.
                 </h3>
             </div>
             <br>
+            <hr>
+            <br>
             <!-- Creating text for user input to live -->
             <div id="counter">
-                <p id="winsText">Wins:</p>
-                <p id="lossText">Loses:</p>
-                <p id="guessesLeftText">Guesses Left:</p>
-                <p id="lettersGuessedText">Letters Guessed:</p>
-                <p id="userGuess"></p>
+                <p class="textInfo" id="winsText">Wins:</p>
+                <p class="textInfo" id="lossText">Loses:</p>
+                <p class="textInfo" id="guessesLeftText">Guesses Left:</p>
+                <p class="textInfo" id="lettersGuessedText">Letters Guessed:</p>
+                <p class="textInfo" id="userGuess"></p>
             </div>
         </div>
         <!--  -->
     </div>
-    <!-- <script>
+    <script>
 
         var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -137,7 +140,7 @@
         };
 
 
-    </script> -->
+    </script>
     <script src="./assets/game.js"></script>
 </body>
 

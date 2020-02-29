@@ -3,42 +3,43 @@ h1 {
     font-size: 30px;
     font-weight: bold;
     padding: 2%;
-    background-color: burlywood;
+    color: white;
+    
 }
 .mainContainer {
 
-    border: 1px solid black;
-    border-radius: 3px;
-    background-color: aqua;
+
     max-width: 85%;
     margin: auto;
 }
 
 body {
-    background-color: #A3FFF1;
+    background-image: url(../images/backdrop.png);
+    background-size: 120%;
 }
 
 #desc {
-    background-color:#96FFB4;
+    background-color:white;
+    opacity: .5;
     font-weight: bold;
     line-height: 150%;
     padding: 3%;
     text-align: center;
     max-width: 70%;
-    margin: 0% 15% 0% 15%;
+    margin: auto;
     color: black;
     font-size: 22px;
-    border: 2px solid black;
-    border-radius: 10px;
+    font-family: 'Simonetta';
 }
 
 #counter {
-    margin: 5% 0% 0% 15%;
-    max-width: 65.5%;
-    background-color: rgb(255, 96, 96);
-    padding: 1% 1% 1% 3%;
-    border: 2px solid black;
-    border-radius: 10px;
+    margin: auto;
+    max-width: 70%;
+    background-color:black;
+    opacity: .5;
+    color: white;
+    padding: 3%;
+    font-family: 'Simonetta' ;
     font-weight: bold;
     line-height: 150%;
 }
@@ -46,8 +47,16 @@ body {
 .container {
     border-radius: 10px;
     margin: 0 8% 0 8%;
-    /* background-color: #256C99; */
-    /* border: 1px solid black; */
+
     padding: 3% 0 15% 0;
 
+}
+
+hr {
+    max-width: 75%;
+}
+
+.textInfo {
+    opacity: 10;
+    /* font-family: 'Simonetta'; */
 }
